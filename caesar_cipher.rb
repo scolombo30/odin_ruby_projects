@@ -1,4 +1,4 @@
-def caesar_cipher(plaintext, key)
+def caesar_cipher(plaintext, key = 12)
   plaintext_bytes = plaintext.bytes
   #Using modulo so that key=2 == key=28, this grants a round key
   key = key%26
