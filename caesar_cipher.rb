@@ -36,5 +36,7 @@ def caesar_decipher (plaintext, key)
   result.to_s
   end
 
-p caesar_cipher("CIAO",1)
-p caesar_decipher("DJBP",1)
+p caesar_cipher("H3lLo?",1)
+#=>"I3mMp?"
+p caesar_decipher("I3mMp?",1)
+#=>"H3lLo?"
