@@ -9,4 +9,16 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
   <p>and</p>
   <img src="imgs/caesar_result_2.png">
 </li>
+<li>
+  <h3>Sub strings</h3>
+  <p></p>
+</li>
+<li>
+  <h3>Stock picker</h3>
+  <p></p>
+</li>
+<li>
+  <h3>Bubble sort</h3>
+  <p></p>
+</li>
 </ol>
