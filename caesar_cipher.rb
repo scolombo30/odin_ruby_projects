@@ -1,28 +1,20 @@
-def caesar_cipher(plaintext, key = 12)
-  plaintext_bytes = plaintext.bytes
-  #Using modulo so that key=2 == key=28, this grants a round key
-  key = key%26
-  cyphertext_bytes = plaintext_bytes.map do |char|
-    if is_letter?(char)
-      if (char + key).between?(65,90) || (char + key).between?(97,122)
-        char += key
-      else 
-        if (char + key).between?(91,97) 
-          char = (65 - 1) + (char + key - 90)
-        else
-          char = (97 - 1) + (char + key - 122)
-        end
-      end
-    else
-      char
-    end
-  end 
-  cyphertext = cyphertext_bytes.pack("c*")
+def caesar_cipher (plaintext, key)
+lower = ("a".."z").to_a
+upper = ("A".."Z").to_a
+char_array = plaintext.split("")
+result = ""
+char_array.each do |char|
+  unless lower.index(char).nil?
+    result << lower[(lower.index(char) + key) % 26]
+  end
+  unless upper.index(char).nil?
+    result << upper[(upper.index(char) + key) % 26]
+  end
+  if upper.index(char).nil? & lower.index(char).nil?
+    result << char
+  end
+end
+result.to_s
 end
 
-def is_letter?(char)
-  char.ord.between?(65, 90) || char.ord.between?(97, 122) ? true : false
-end
-
-puts caesar_cipher("My name is Sebastian!",32)
-#=> Se tgsk oy Ykhgyzogt!
+p caesar_cipher("abcdefghijklmnopqrstuvwxyz !?12 ABCDEFGHIJKLMNOPQRSTUVWXYZ",1)
