@@ -11,7 +11,8 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
   <h3>Sub strings</h3>
   <p>In this second project, the object is to implement the method substring such that it receives a phrase and a dictionary(an array) and it'll 
   output an hash containing all the words of the dictionary that are included in the phrase. The hash also contains the number of time each word 
-  is used in the phrase. \Below ther's the snippet code with the method being called and it's output.</p>
+  is used in the phrase. \ 
+  Below ther's the snippet code with the method being called and it's output.</p>
   <img src="imgs/substrings_result.png">
 </li>
 <li>
