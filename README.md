@@ -23,7 +23,15 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
   <img src="imgs/stock_picker_result.png">
 </li>
 <li>
-  <h3>Bubble sort</h3>
-  <p></p>
+  <h3>Bubble sort V1</h3>
+  <p>In this project there's a basic implementation of a bubble sort.  A bubble sort, is a sorting algorithm that compare two following items in an array, and if the second is bigger, it switches them. This first version executes more than necessary comparisons.</p>
+  <p>Below ther's the snippet code with the method being called and it's output.</p>
+  <img src="imgs/bubble_sort_result_V1.png">
+</li>
+<li>
+  <h3>Bubble sort V2</h3>
+  <p>In this project there's a basic implementation of a bubble sort.  A bubble sort, is a sorting algorithm that compare two following items in an array, and if the second is bigger, it switches them. This second version add a check so that the algorithm executes only comparisons when necessary.</p>
+  <p>Below ther's the snippet code with the method being called and it's output.</p>
+  <img src="imgs/bubble_sort_result_V2.png">
 </li>
 </ol>
