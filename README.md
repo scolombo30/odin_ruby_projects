@@ -19,7 +19,7 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
 <li>
   <h3>Stock picker</h3>
   <p>In this project, the method I had to implement was about searching the best day to buy and sell a stock, given an array with the daily prices of a stock. One thing I had to to pay attention to is that before selling I should check if previously I've bought that stock.</p>
-  Below ther's the snippet code with the method being called and it's output.</p>
+  Below ther's the snippet code with the method being called and it's output.
   <img src="imgs/stock_picker_result.png">
 </li>
 <li>
