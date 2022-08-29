@@ -4,7 +4,7 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
 <ol>
 <li>
   <h3>Caesar cipher</h3>
-  <p>This is the first project and it's an implementation of the Caesar cipher. Given a string and an Integer(key) it will output the string with the letter shifted to the right by "key" positions.</p>
+  <p>This is the first project and it's an implementation of the Caesar cipher. Given a string and an integer(k) used as the key, it will output the string with the letter shifted to the right by <b><i>k</i></b> positions.</p>
     <p>Below you can find two snippets of the input and the output. Both crypt and decrypt.</p>
   <img src="imgs/caesar_result.png">
 </li>
