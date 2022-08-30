@@ -12,6 +12,6 @@ def bubble_sort_v2(array)
   array
 end
 
-arr = [12,45,67,3,1,8,9,87,123]
+arr = [12, 45, 67, 3, 1, 8, 9, 87, 123]
 p bubble_sort_v2(arr)
 #=> [1, 3, 8, 9, 12, 45, 67, 87, 123]
