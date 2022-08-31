@@ -1,3 +1,5 @@
+$LOAD_PATH << '.'
+require 'exceptions.rb'
 class Board
   PLAYER_ONE_SYMBOL = 'O'
   PLAYER_TWO_SYMBOL = 'X'
@@ -10,11 +12,11 @@ class Board
     ]
   end
 
-  def make_move(turn1, row, column)
+  def make_move(player, row, column)
     if row_or_column_out_of_bound?(row, column)
       false
     elsif cell_occupied?(row, column)
-      @board[row][column] = if turn1
+      @board[row][column] = if player == 'O'
                               PLAYER_ONE_SYMBOL
                             else
                               PLAYER_TWO_SYMBOL
@@ -26,7 +28,7 @@ class Board
   end
 
   def victory?(player)
-    raise WinException, 'Player one' if victory_rows?(player) || victory_columns?(player) || victory_diagonals?(player)
+    raise WinException, player if victory_rows?(player) || victory_columns?(player) || victory_diagonals?(player)
 
     false
   end
@@ -52,27 +54,53 @@ class Board
     full = @board.all? do |row|
       row.all? { |cell| cell != ' ' }
     end
-    return true if full && !victory?(player)
+    raise TieException if full && !victory?(player)
 
     false
   end
 
-  def play; 
-    #greet players
-    #start a while
-    #check whose turn it is
-    #player inputs rows and columns
-    #try to insert symbol in cell if it is empty and in buond
-    #print
-    #check if there's a win or a tie, repeat from "check whose turn it is"
-    #announce winner/tie
+  def play
+    puts 'Welcome to Tic-Tac-Toe. Let the game begin'
+    turn = 'O'
+    loop do
+      player = turn == 'O' ? 'Player one' : 'Player two'
+      puts "It\'s your turn #{player}"
+      # player inputs rows and columns
+      puts 'Please insert row (1-3): '
+      row = gets.chomp.to_i
+      puts 'Please insert column (1-3): '
+      column = gets.chomp.to_i
+      begin
+        make_move(turn, row - 1, column - 1)
+      rescue CellIndexOutOfBound => e
+        puts "The cell you choose had and index not between 1 and 3. Please re-insert. "
+        redo
+      rescue CellAlreadyOccupied => e
+        puts "The cell you choose is already been marked. Please choose another one."
+        redo
+      end
+      print_board
+      begin
+        victory?(turn)
+      rescue WinException => e
+        puts "Congratulation #{e.winner}, you WON!"
+        break
+      end
+      begin
+        tie?(turn)
+      rescue TieException
+        puts "It's a tie"
+        break
+      end
+      turn = turn == 'O' ? 'X' : 'O'
+    end
   end
 
   private
 
   def row_or_column_out_of_bound?(row, column)
-    if row > 2 || column > 2
-      puts 'Row or column out of bound'
+    if row > 2 || column > 2 || row < 0 || column < 0
+      raise CellIndexOutOfBound
       true
     else
       false
@@ -83,7 +111,7 @@ class Board
     if @board[row][column] == ' '
       true
     else
-      puts 'The cell is already marked'
+      raise CellAlreadyOccupied
       false
     end
   end
@@ -98,8 +126,4 @@ class Board
   end
 end
 
-game = Board.new
-game.make_move(true, 0, 0)
-game.make_move(true, 1, 1)
-game.make_move(false, 2, 2)
-game.print_board
+Board.new.play
