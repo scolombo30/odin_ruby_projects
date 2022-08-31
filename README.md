@@ -34,4 +34,11 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
   <p>Below ther's the snippet code with the method being called and it's output.</p>
   <img src="imgs/bubble_sort_result_V2.png">
 </li>
+<li>
+  <h3>Tic Tac Toe</h3>
+  <p>In this project there's an implementation of the ame tic tac toe. It has no GUI, to play you have to digit the number of the row and the number of the column of the cell you wish to mark. All of the input and output is done trough the terminal.</p>
+  <p>Below ther's the snippet code with the class being created and the method play invocated. There is also commented a possible output of the console.</p>
+  <img src="imgs/tic_tac_toe_win" width=45%>
+  <img src="imgs/tic_tac_toe_out_bound" width=45%>
+</li>
 </ol>
