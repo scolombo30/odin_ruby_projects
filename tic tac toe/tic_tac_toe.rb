@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 $LOAD_PATH << '.'
-require 'exceptions.rb'
+require 'exceptions'
 class Board
   PLAYER_ONE_SYMBOL = 'O'
   PLAYER_TWO_SYMBOL = 'X'
@@ -72,11 +74,11 @@ class Board
       column = gets.chomp.to_i
       begin
         make_move(turn, row - 1, column - 1)
-      rescue CellIndexOutOfBound => e
-        puts "The cell you choose had and index not between 1 and 3. Please re-insert. "
+      rescue CellIndexOutOfBoundException
+        puts 'The cell you choose had and index not between 1 and 3. Please re-insert. '
         redo
-      rescue CellAlreadyOccupied => e
-        puts "The cell you choose is already been marked. Please choose another one."
+      rescue CellAlreadyOccupiedException
+        puts 'The cell you choose is already been marked. Please choose another one.'
         redo
       end
       print_board
@@ -99,8 +101,8 @@ class Board
   private
 
   def row_or_column_out_of_bound?(row, column)
-    if row > 2 || column > 2 || row < 0 || column < 0
-      raise CellIndexOutOfBound
+    if row > 2 || column > 2 || row.negative? || column.negative?
+      raise CellIndexOutOfBoundException
       true
     else
       false
@@ -111,7 +113,7 @@ class Board
     if @board[row][column] == ' '
       true
     else
-      raise CellAlreadyOccupied
+      raise CellAlreadyOccupiedException
       false
     end
   end

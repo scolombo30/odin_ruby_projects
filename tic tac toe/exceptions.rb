@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WinException < StandardError
   attr_reader :winner
 
@@ -7,21 +9,8 @@ class WinException < StandardError
   end
 end
 
-class TieException < StandardError
-  def initialize
-    super
-  end
-end
+class TieException < StandardError; end
 
-class CellIndexOutOfBound < StandardError
-  def initialize
-    super
-  end
-end
+class CellIndexOutOfBoundException < StandardError; end
 
-class CellAlreadyOccupied < StandardError
-  def initialize
-    super
-  end
-end
-
+class CellAlreadyOccupiedException < StandardError; end
