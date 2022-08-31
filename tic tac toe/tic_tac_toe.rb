@@ -25,19 +25,6 @@ class Board
     end
   end
 
-  def print_board
-    @board.each do |arr|
-      arr.each_with_index do |cell, index|
-        print "#{cell}|" if index < 2
-        print "#{cell}\n" if index == 2
-      end
-    end
-  end
-
-  def game_over?
-    victory? || tie?
-  end
-
   def victory?(player)
     raise WinException, 'Player one' if victory_rows?(player) || victory_columns?(player) || victory_diagonals?(player)
 
@@ -61,16 +48,25 @@ class Board
     return true if @board[0][2] == @board[1][1] && @board[0][2] == @board[2][0] && @board[0][2] == player
   end
 
-  def tie?
+  def tie?(player)
     full = @board.all? do |row|
       row.all? { |cell| cell != ' ' }
     end
-    return true if full && !victory?
+    return true if full && !victory?(player)
 
     false
   end
 
-  def play; end
+  def play; 
+    #greet players
+    #start a while
+    #check whose turn it is
+    #player inputs rows and columns
+    #try to insert symbol in cell if it is empty and in buond
+    #print
+    #check if there's a win or a tie, repeat from "check whose turn it is"
+    #announce winner/tie
+  end
 
   private
 
@@ -89,6 +85,15 @@ class Board
     else
       puts 'The cell is already marked'
       false
+    end
+  end
+
+  def print_board
+    @board.each do |arr|
+      arr.each_with_index do |cell, index|
+        print "#{cell}|" if index < 2
+        print "#{cell}\n" if index == 2
+      end
     end
   end
 end
