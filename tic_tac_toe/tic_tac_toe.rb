@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << '.'            # if you run from terminal when it is in ./odin_ruby_projects/tic_tac_toe
+$LOAD_PATH << '.'                # if you run from terminal when it is in ./odin_ruby_projects/tic_tac_toe
 # $LOAD_PATH << './tic_tac_toe'  # if you run from terminal when it is in ./odin_ruby_projects
 require 'exceptions'
 class Board
@@ -114,3 +114,15 @@ class Board
 end
 
 Board.new.play
+=begin
+Welcome to Tic-Tac-Toe. Let the game begin
+It's your turn Player one
+Please insert row (1-3): 
+1
+Please insert column (1-3): 
+4
+ | | 
+ | | 
+ | | 
+ The cell you choose had and index not between 1 and 3. Please re-insert.
+=end
