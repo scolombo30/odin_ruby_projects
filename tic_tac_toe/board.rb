@@ -112,17 +112,3 @@ class Board
     false
   end
 end
-
-Board.new.play
-=begin
-Welcome to Tic-Tac-Toe. Let the game begin
-It's your turn Player one
-Please insert row (1-3): 
-1
-Please insert column (1-3): 
-4
- | | 
- | | 
- | | 
- The cell you choose had and index not between 1 and 3. Please re-insert.
-=end

@@ -36,9 +36,3 @@ class Game
     result << ColorizedString["  #{hash[:spot]}  "].colorize(color: :black, background: :light_blue)
   end
 end
-
-c = [1, 4, 1, 1]
-
-game = Game.new(c)
-puts game.play
-p game.choose_random_sequence
