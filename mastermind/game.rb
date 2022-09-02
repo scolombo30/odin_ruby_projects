@@ -1,13 +1,24 @@
 # frozen_string_literal: false
 
+$LOAD_PATH << './mastermind'
+
 require 'colorized_string'
+require 'random_sequence'
 class Game
+  include RandomSequence
   attr_reader :combination
 
   def initialize(combination)
     @combination = combination
   end
 
+  def play()
+    #code before
+    check([1, 1, 1, 1])
+    #code after
+  end
+
+  private
   def check(guess)
     correct_spot = 0
     correct_color = 0
@@ -27,7 +38,7 @@ class Game
 end
 
 c = [1, 4, 1, 1]
-g = [1, 0, 1, 4]
 
 game = Game.new(c)
-puts game.check(g)
+puts game.play
+p game.choose_random_sequence
