@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'colorized_string'
 class Game
   attr_reader :combination
@@ -9,7 +11,7 @@ class Game
   def check(guess)
     correct_spot = 0
     correct_color = 0
-    for i in 0..3
+    (0..3).each do |i|
       correct_spot += 1 if guess[i] == combination[i]
       correct_color += 1 if combination.include?(guess[i]) && guess[i] != combination[i]
     end
@@ -17,15 +19,15 @@ class Game
   end
 
   def formatted_string(hash)
-    result = ''
-    result << ColorizedString["  #{hash[:spot]}  "].colorize(:color => :black, :background => :green)
+    result = ' '
+    result << ColorizedString["  #{hash[:spot]}  "].colorize(color: :black, background: :green)
     result << ' '
-    result << ColorizedString["  #{hash[:spot]}  "].colorize(:color => :black, :background => :light_blue)
+    result << ColorizedString["  #{hash[:spot]}  "].colorize(color: :black, background: :light_blue)
   end
 end
 
-c = [1,4,1,1]
-g = [1,0,1,4]
+c = [1, 4, 1, 1]
+g = [1, 0, 1, 4]
 
 game = Game.new(c)
 puts game.check(g)
