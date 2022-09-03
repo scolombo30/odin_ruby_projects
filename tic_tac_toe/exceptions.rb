@@ -4,8 +4,7 @@ class WinException < StandardError
   attr_reader :winner
 
   def initialize(winner)
-    @winner = winner == 'O' ? 'Player one' : 'Player two'
-    puts "Congratulation #{self.winner}, you WON!"
+    puts "Congratulation #{winner}, you WON!"
     super
   end
 end

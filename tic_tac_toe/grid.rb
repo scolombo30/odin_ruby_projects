@@ -3,23 +3,27 @@
 $LOAD_PATH << '.'                # if you run from terminal when it is in ./odin_ruby_projects/tic_tac_toe
 # $LOAD_PATH << './tic_tac_toe'  # if you run from terminal when it is in ./odin_ruby_projects
 require 'exceptions'
-class Board
+class Grid
   PLAYER_ONE_SYMBOL = 'O'
   PLAYER_TWO_SYMBOL = 'X'
 
-  def initialize
+  attr_accessor :board
+  attr_reader :player_one, :player_two
+  def initialize(one, two)
     @board = [
       [' ', ' ', ' '],
       [' ', ' ', ' '],
       [' ', ' ', ' ']
     ]
+    @player_one = one
+    @player_two = two
   end
 
   def play
     puts 'And now let the game begin'
     turn = 'O'
     loop do
-      player = turn == 'O' ? 'Player one' : 'Player two'
+      player = turn == 'O' ? player_one : player_two
       puts "It\'s your turn #{player}"
       puts 'Please insert row (1-3): '
       row = gets.chomp.to_i
@@ -60,7 +64,7 @@ class Board
 
     true
   end
-
+  #aggiungere un po' di spazi nella stampa stile instructions
   def print_board
     @board.each do |arr|
       arr.each_with_index do |cell, index|
@@ -81,7 +85,8 @@ class Board
   end
 
   def victory?(player)
-    raise WinException, player if victory_rows?(player) || victory_columns?(player) || victory_diagonals?(player)
+    player_name = player == 'O' ? player_one : player_two
+    raise WinException, player_name if victory_rows?(player) || victory_columns?(player) || victory_diagonals?(player)
 
     false
   end
