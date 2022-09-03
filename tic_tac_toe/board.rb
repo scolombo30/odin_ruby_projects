@@ -16,7 +16,7 @@ class Board
   end
 
   def play
-    puts 'Welcome to Tic-Tac-Toe. Let the game begin'
+    puts 'And now let the game begin'
     turn = 'O'
     loop do
       player = turn == 'O' ? 'Player one' : 'Player two'

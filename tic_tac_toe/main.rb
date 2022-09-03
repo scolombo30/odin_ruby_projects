@@ -4,6 +4,6 @@ require 'board'
 
 include Instructions
 
-print_rules()
+print_instructions
 
 Board.new.play
