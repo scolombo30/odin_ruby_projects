@@ -2,21 +2,13 @@ module RandomSequence
   def choose_random_sequence
     sequence = []
     4.times do |i|
-      case random = rand(0...5)
-      when 0
-        sequence[i] = :white
-      when 1
-        sequence[i] = :cyan
-      when 2
-        sequence[i] = :magenta
-      when 3
-        sequence[i] = :yellow
-      when 4
-        sequence[i] = :red
-      when 5
-        sequence[i] = :black
-      end
-    end
-    sequence
+      random = rand(0...5)
+      sequence[i] = :white if random.zero?
+      sequence[i] = :cyan if random == 1
+      sequence[i] = :magenta if random == 1
+      sequence[i] = :yellow if random == 1
+      sequence[i] = :red if random == 1
+      sequence[i] = :black if random == 1
+    end; sequence
   end
 end
