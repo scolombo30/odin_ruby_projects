@@ -27,4 +27,15 @@ module Instructions
     puts 'Press any key to continue...'
     gets
   end
+
+  def ask_username(player)
+    number_player = player == 1 ? 'one' : 'two'
+    puts "Player #{number_player} type your name:"
+    loop do
+      name = gets.chomp.gsub(' ', '_')
+      return name unless name.empty?
+
+      puts 'Empty name invalid, please re-insert:'
+    end
+  end
 end
