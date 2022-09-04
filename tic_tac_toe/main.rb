@@ -1,5 +1,5 @@
-$LOAD_PATH << './tic_tac_toe' 
-require 'instructions'
+$LOAD_PATH << './tic_tac_toe'
+require 'setup'
 require 'grid'
 
 include Instructions

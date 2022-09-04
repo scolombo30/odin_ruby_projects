@@ -64,16 +64,19 @@ class Grid
 
     true
   end
-  #aggiungere un po' di spazi nella stampa stile instructions
+
   def print_board
-    @board.each do |arr|
+    @board.each_with_index do |arr, outside_index|
+      puts '     |     |     '
       arr.each_with_index do |cell, index|
-        print "#{cell}|" if index < 2
-        print "#{cell}\n" if index == 2
+        print "  #{cell}  |" if index < 2
+        print "  #{cell}\n" if index == 2
       end
+      puts '     |     |     '
+      puts '---- · --- · ----' if outside_index < 2
     end
   end
-  
+
   def make_move(player, row, column)
     row_or_column_out_of_bound?(row, column)
     cell_occupied?(row, column)
