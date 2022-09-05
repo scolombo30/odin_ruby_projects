@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 $LOAD_PATH << './mastermind'
 
 require 'utils'
@@ -37,10 +38,10 @@ module Instructions
     puts 'Press ENTER to continue ...'
     gets
     puts 'It\'s your turn now. Try to enter [ '\
-         "#{ColorizedString['  2  '].colorize(:color => :black, :background => :magenta).concat(' ')}, "\
-         "#{ColorizedString['  5  '].colorize(:color => :black, :background => :blue).concat(' ')}, "\
-         "#{ColorizedString['  3  '].colorize(:color => :black, :background => :yellow).concat(' ')}, "\
-         "#{ColorizedString['  0  '].colorize(:color => :black, :background => :white).concat(' ')}"\
+         "#{ColorizedString['  2  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
+         "#{ColorizedString['  5  '].colorize(color: :black, background: :blue).concat(' ')}, "\
+         "#{ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
+         "#{ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')}"\
          '], remeber to separate numbers with spaces'
     loop do
       input = gets.chomp
@@ -56,16 +57,15 @@ module Instructions
          'The first one (green) will tell you how many right colors in the right place there were'
     puts 'The second one (light blue) will tell you how many right colors in the wrong place there were'
     puts 'If the correct sequence is'\
-         "#{ColorizedString['  2  '].colorize(:color => :black, :background => :magenta).concat(' ')}, "\
-         "#{ColorizedString['  5  '].colorize(:color => :black, :background => :blue).concat(' ')}, "\
-         "#{ColorizedString['  3  '].colorize(:color => :black, :background => :yellow).concat(' ')}, "\
-         "#{ColorizedString['  0  '].colorize(:color => :black, :background => :white).concat(' ')}"\
+         "#{ColorizedString['  2  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
+         "#{ColorizedString['  5  '].colorize(color: :black, background: :blue).concat(' ')}, "\
+         "#{ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
+         "#{ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')}"\
          'and you typed [3 5 1 2], the program will display as follow'
     puts "#{ColorizedString['  1  '].colorize(color: :black, background: :green)}  right colors in the right spot"
-    puts "#{ColorizedString['  2  '].colorize(:color => :black, :background => :blue).concat(' ')}"\
+    puts "#{ColorizedString['  2  '].colorize(color: :black, background: :blue).concat(' ')}"\
          'right colors in the wrong spot'
     puts 'ACHIEVEMENT UNLOCKED: Finish the tutorial. Good luck and enjoy.'
     puts ''
   end
 end
-
