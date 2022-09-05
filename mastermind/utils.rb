@@ -1,4 +1,4 @@
-module RandomSequence
+module Utils
   def choose_random_sequence
     sequence = []
     4.times do |i|

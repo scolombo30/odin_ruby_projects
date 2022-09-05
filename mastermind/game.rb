@@ -3,9 +3,9 @@
 $LOAD_PATH << './mastermind'
 
 require 'colorized_string'
-require 'random_sequence'
+require 'utils'
 class Game
-  include RandomSequence
+  include Utils
   attr_reader :combination
 
   def initialize(combination)
