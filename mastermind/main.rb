@@ -9,7 +9,8 @@ require 'game'
 include Utils
 include Instructions
 
-Instructions.print_rules
+print_rules
+print_examples
 
 # sequenza da chiedere in futuro
 c = [1, 4, 1, 1]

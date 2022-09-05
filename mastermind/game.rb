@@ -31,9 +31,10 @@ class Game
   end
 
   def formatted_string(hash)
-    result = ' '
+    result = ''
     result << ColorizedString["  #{hash[:spot]}  "].colorize(color: :black, background: :green)
-    result << ' '
-    result << ColorizedString["  #{hash[:spot]}  "].colorize(color: :black, background: :light_blue)
+    result << " right colors in the right spot \n"
+    result << ColorizedString["  #{hash[:color]}  "].colorize(color: :black, background: :light_blue)
+    result << ' right colors in the wrong spot'
   end
 end

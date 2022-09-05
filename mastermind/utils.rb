@@ -13,4 +13,21 @@ module Utils
       sequence[i] = :black if random == 5
     end; sequence
   end
+
+  def choose_player
+
+  end
+
+  def choose_player_sequence
+
+  end
+
+  def print_colors
+    print ColorizedString['  0  '].colorize(:color => :black, :background => :white).concat(' ')
+    print ColorizedString['  1  '].colorize(:color => :black, :background => :cyan).concat(' ')
+    print ColorizedString['  2  '].colorize(:color => :black, :background => :magenta).concat(' ')
+    print ColorizedString['  3  '].colorize(:color => :black, :background => :yellow).concat(' ')
+    print ColorizedString['  4  '].colorize(:color => :black, :background => :red).concat(' ')
+    puts ColorizedString['  5  '].colorize(:color => :black, :background => :blue)
+  end
 end
