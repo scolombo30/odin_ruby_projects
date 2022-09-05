@@ -12,13 +12,14 @@ class Game
     @combination = combination
   end
 
-  def play()
-    #code before
+  def play
+    # code before
     check([1, 1, 1, 1])
-    #code after
+    # code after
   end
 
   private
+
   def check(guess)
     correct_spot = 0
     correct_color = 0
