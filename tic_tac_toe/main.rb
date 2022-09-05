@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $LOAD_PATH << './tic_tac_toe'
 require 'setup'
 require 'grid'

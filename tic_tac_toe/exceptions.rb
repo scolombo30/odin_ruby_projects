@@ -27,5 +27,5 @@ class CellAlreadyOccupiedException < StandardError
   def initialize
     puts 'The cell you choose is already been marked. Please choose another one.'
     super
-  end 
+  end
 end

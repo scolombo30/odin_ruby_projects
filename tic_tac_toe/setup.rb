@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Instructions
   def print_instructions
     puts 'Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for two players' \

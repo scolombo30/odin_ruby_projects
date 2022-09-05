@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << '.'                # if you run from terminal when it is in ./odin_ruby_projects/tic_tac_toe
+$LOAD_PATH << '.' # if you run from terminal when it is in ./odin_ruby_projects/tic_tac_toe
 # $LOAD_PATH << './tic_tac_toe'  # if you run from terminal when it is in ./odin_ruby_projects
 require 'exceptions'
 class Grid
@@ -9,6 +9,7 @@ class Grid
 
   attr_accessor :board
   attr_reader :player_one, :player_two
+
   def initialize(one, two)
     @board = [
       [' ', ' ', ' '],
