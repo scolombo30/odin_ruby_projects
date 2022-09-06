@@ -28,8 +28,6 @@ module Utils
     choice
   end
 
-  def choose_player_sequence; end
-
   def print_colors
     print ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')
     print ColorizedString['  1  '].colorize(color: :black, background: :cyan).concat(' ')
