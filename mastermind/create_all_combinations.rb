@@ -5,7 +5,7 @@ s = Array.new
   6.times do |i2|
     6.times do |i3|
       6.times do |i4|
-        s << [i1, i2, i3, i4]
+        s << [i1 + 1, i2 + 1, i3 + 1, i4 + 1]
       end
     end
   end
