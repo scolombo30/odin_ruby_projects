@@ -62,10 +62,11 @@ module Instructions
          "#{ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
          "#{ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')}"\
          'and you typed [3 5 1 2], the program will display as follow'
-    puts "#{ColorizedString['  1  '].colorize(color: :black, background: :green)}  right colors in the right spot"
+    puts "#{ColorizedString['  1  '].colorize(color: :black, background: :green)} right colors in the right spot"
     puts "#{ColorizedString['  2  '].colorize(color: :black, background: :blue).concat(' ')}"\
          'right colors in the wrong spot'
     puts 'ACHIEVEMENT UNLOCKED: Finish the tutorial. Good luck and enjoy.'
-    puts ''
+    puts 'Press ENTER to continue ...'
+    gets
   end
 end

@@ -14,7 +14,19 @@ module Utils
     end; sequence
   end
 
-  def choose_player; end
+  def choose_player
+    puts 'Choose how you want to play (digit 1 or 2):'
+    puts '1-The computer generates a sequence and you have to guess it'
+    puts '2-You create a sequence and the computer will try to guess it'
+    choice = ''
+    loop do
+      choice = gets.chomp
+      break if %w[1 2].include?(choice)
+
+      puts 'Invalid input(digit only 1 or 2). Try again'
+    end
+    choice
+  end
 
   def choose_player_sequence; end
 

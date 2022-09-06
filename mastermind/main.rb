@@ -12,9 +12,7 @@ include Instructions
 print_rules
 print_examples
 
-# sequenza da chiedere in futuro
-c = [1, 4, 1, 1]
+choose_player == '1' ? player_guess : computer_guess
 
-game = Game.new(c)
-puts game.play
-p game.choose_random_sequence
+# sequenza da chiedere in futuro; c = [1, 4, 1, 1]
+# game = Game.new(c); puts game.play; p game.choose_random_sequence
