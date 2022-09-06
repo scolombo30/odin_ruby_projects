@@ -1,6 +1,6 @@
 # frozen_string_literal: false
 
-$LOAD_PATH << './mastermind'
+$LOAD_PATH << '.'
 
 require 'colorized_string'
 require 'utils'

@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << './mastermind'
+$LOAD_PATH << '.'
 
 require 'utils'
 require 'instructions'
 require 'game'
+require 'human_player'
 
 include Utils
 include Instructions
@@ -12,7 +13,5 @@ include Instructions
 print_rules
 print_tutorial
 
-choose_player == '1' ? player_guess : computer_guess
-
-# sequenza da chiedere in futuro; c = [1, 4, 1, 1]
-# game = Game.new(c); puts game.play; p game.choose_random_sequence
+a = choose_player == '1' ? HumanPlayer.new : computer_guess
+p a
