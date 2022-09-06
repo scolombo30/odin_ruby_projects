@@ -10,7 +10,7 @@ include Utils
 include Instructions
 
 print_rules
-print_examples
+print_tutorial
 
 choose_player == '1' ? player_guess : computer_guess
 

@@ -28,7 +28,7 @@ module Instructions
     gets
   end
 
-  def print_examples
+  def print_tutorial
     puts 'Now it\'s time for some examples:'
     puts 'When you will be asked to guess, there will be printed the colors with their corresponding numbers like so'
     print_colors
