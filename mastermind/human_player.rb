@@ -14,6 +14,7 @@ class HumanPlayer < Game
 
   def play
     puts 'The sequence has been choosen. It\'s your turn now. Try guess it! Remember, you only have 12 guesses'
+    guessed = false
     12.times do |turn|
       puts "Turn #{turn + 1}"
       print_colors
@@ -23,11 +24,11 @@ class HumanPlayer < Game
       result = check(array_input)
       puts result
       if array_input == combination
-        print_win
-        return
+        guessed = true
+        break
       end
     end
-    print_loss
+    guessed ? print_win : print_loss
   end
 
   def valid_input(input)
