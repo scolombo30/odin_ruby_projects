@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $LOAD_PATH << '.'
 
 require 'utils'
@@ -31,7 +33,7 @@ class HumanPlayer < Game
   def valid_input(input)
     array_input = []
     loop do
-      array_input = input.split(' ').map! {|el| el.to_i }
+      array_input = input.split(' ').map!(&:to_i)
       break if array_input.size == 4 && array_input.all? { |el| el.to_i < 7 && el.to_i.positive? }
 
       puts 'Invalid input. Please re-insert'
@@ -42,28 +44,13 @@ class HumanPlayer < Game
 
   def print_win
     puts 'Congrats, you crack the code!'
+    print 'The solution was exactly: '
+    puts print_correct_combination
   end
 
   def print_loss
     puts 'Oh-oh, you dind\'t crack the code'
     print 'The solution was: '
-    sequence = ''
-    4.times do |i|
-      case combination[i]
-      when 1
-        sequence << ColorizedString['  1  '].colorize(color: :black, background: :white).concat(' ')
-      when 2
-        sequence << ColorizedString['  2  '].colorize(color: :black, background: :cyan).concat(' ')
-      when 3
-        sequence << ColorizedString['  3  '].colorize(color: :black, background: :magenta).concat(' ')
-      when 4
-        sequence << ColorizedString['  4  '].colorize(color: :black, background: :yellow).concat(' ')
-      when 5
-        sequence << ColorizedString['  5  '].colorize(color: :black, background: :red).concat(' ')
-      when 6
-        sequence << ColorizedString['  6  '].colorize(color: :black, background: :blue).concat(' ')
-      end
-    end
-    puts sequence
+    puts print_correct_combination
   end
 end
