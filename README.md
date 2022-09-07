@@ -36,9 +36,15 @@ In this repository I'll push all the ruby scripts I will write as a solution to 
 </li>
 <li>
   <h3>Tic Tac Toe</h3>
-  <p>In this project there's an implementation of the ame tic tac toe. It has no GUI, to play you have to digit the number of the row and the number of the column of the cell you wish to mark. All of the input and output is done trough the terminal.</p>
+  <p>In this project there's an implementation of the game tic tac toe. It has no GUI, to play you have to digit the number of the row and the number of the column of the cell you wish to mark. All of the input and output is done trough the terminal.</p>
   <p>Below ther's the snippet code with the class being created and the method play invocated. There is also commented a possible output of the console.</p>
   <img src="imgs/tic_tac_toe_win.png" width=45%>
   <img src="imgs/tic_tac_toe_out_bound.png" width=46%>
+</li>
+<li>
+  <h3>Mastermind</h3>
+  <p>In this project there's an implementation of the game Mastermind. It has no GUI, but the color combinations are printed using a Ruby gem (colorize string). There are two possible game modes, in the former the pc creates a combination and the player has to guess it. In the latter it is the player who picks a combination and the pc has to guess it(quite difficult, since the pc is using a "bogo" guessing strategy)</p>
+  <p>Below ther's the snippet code with the class being created and the method play invocated, based on what the user decides.</p>
+  <img src="imgs/mastermind.png">
 </li>
 </ol>
