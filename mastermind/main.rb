@@ -13,5 +13,4 @@ include Instructions
 print_rules
 print_tutorial
 
-a = choose_player == '1' ? HumanPlayer.new : computer_guess
-p a
+choose_player == '1' ? HumanPlayer.new.play : computer_guess

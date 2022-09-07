@@ -33,19 +33,19 @@ module Instructions
     puts 'When you will be asked to guess, there will be printed the colors with their corresponding numbers like so'
     print_colors
     puts 'So you\'ll have to type the number corresponding to the colors you want, separated with a white spaces'
-    puts 'If your guess, for example is [red, white, yellow, white] then you\'d have to write [4 0 3 4],'\
+    puts 'If your guess, for example is [red, white, yellow, white] then you\'d have to write [5 1 4 5],'\
          'without the square brackets'
     puts 'Press ENTER to continue ...'
     gets
     puts 'It\'s your turn now. Try to enter [ '\
-         "#{ColorizedString['  2  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
-         "#{ColorizedString['  5  '].colorize(color: :black, background: :blue).concat(' ')}, "\
-         "#{ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
-         "#{ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')}"\
+         "#{ColorizedString['  3  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
+         "#{ColorizedString['  6  '].colorize(color: :black, background: :blue).concat(' ')}, "\
+         "#{ColorizedString['  4  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
+         "#{ColorizedString['  1  '].colorize(color: :black, background: :white).concat(' ')}"\
          '], remeber to separate numbers with spaces'
     loop do
       input = gets.chomp
-      if input == '2 5 3 0'
+      if input == '3 6 4 1'
         puts 'Congrats you understood !'
         break
       else
@@ -57,11 +57,11 @@ module Instructions
          'The first one (green) will tell you how many right colors in the right place there were'
     puts 'The second one (light blue) will tell you how many right colors in the wrong place there were'
     puts 'If the correct sequence is'\
-         "#{ColorizedString['  2  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
-         "#{ColorizedString['  5  '].colorize(color: :black, background: :blue).concat(' ')}, "\
-         "#{ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
-         "#{ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')}"\
-         'and you typed [3 5 1 2], the program will display as follow'
+         "#{ColorizedString['  3  '].colorize(color: :black, background: :magenta).concat(' ')}, "\
+         "#{ColorizedString['  6  '].colorize(color: :black, background: :blue).concat(' ')}, "\
+         "#{ColorizedString['  4  '].colorize(color: :black, background: :yellow).concat(' ')}, "\
+         "#{ColorizedString['  1  '].colorize(color: :black, background: :white).concat(' ')}"\
+         'and you typed [4 6 2 3], the program will display as follow'
     puts "#{ColorizedString['  1  '].colorize(color: :black, background: :green)} right colors in the right spot"
     puts "#{ColorizedString['  2  '].colorize(color: :black, background: :blue).concat(' ')}"\
          'right colors in the wrong spot'

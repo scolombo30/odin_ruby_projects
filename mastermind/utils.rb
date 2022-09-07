@@ -4,13 +4,13 @@ module Utils
   def choose_random_sequence
     sequence = []
     4.times do |i|
-      random = rand(0...5)
-      sequence[i] = :white if random.zero?
-      sequence[i] = :cyan if random == 1
-      sequence[i] = :magenta if random == 2
-      sequence[i] = :yellow if random == 3
-      sequence[i] = :red if random == 4
-      sequence[i] = :black if random == 5
+      random = rand(1...6)
+      sequence[i] = 1 if random == 1
+      sequence[i] = 2 if random == 2
+      sequence[i] = 3 if random == 3
+      sequence[i] = 4 if random == 4
+      sequence[i] = 5 if random == 5
+      sequence[i] = 6 if random == 6
     end; sequence
   end
 
@@ -29,11 +29,11 @@ module Utils
   end
 
   def print_colors
-    print ColorizedString['  0  '].colorize(color: :black, background: :white).concat(' ')
-    print ColorizedString['  1  '].colorize(color: :black, background: :cyan).concat(' ')
-    print ColorizedString['  2  '].colorize(color: :black, background: :magenta).concat(' ')
-    print ColorizedString['  3  '].colorize(color: :black, background: :yellow).concat(' ')
-    print ColorizedString['  4  '].colorize(color: :black, background: :red).concat(' ')
-    puts ColorizedString['  5  '].colorize(color: :black, background: :blue)
+    print ColorizedString['  1  '].colorize(color: :black, background: :white).concat(' ')
+    print ColorizedString['  2  '].colorize(color: :black, background: :cyan).concat(' ')
+    print ColorizedString['  3  '].colorize(color: :black, background: :magenta).concat(' ')
+    print ColorizedString['  4  '].colorize(color: :black, background: :yellow).concat(' ')
+    print ColorizedString['  5  '].colorize(color: :black, background: :red).concat(' ')
+    puts ColorizedString['  6  '].colorize(color: :black, background: :blue)
   end
 end

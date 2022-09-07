@@ -12,12 +12,6 @@ class Game
     @combination = combination
   end
 
-  def play
-    # code before
-    check([1, 1, 1, 1])
-    # code after
-  end
-
   private
 
   def check(guess)
