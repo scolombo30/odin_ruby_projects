@@ -5,13 +5,9 @@ module Utils
     sequence = []
     4.times do |i|
       random = rand(1...6)
-      sequence[i] = 1 if random == 1
-      sequence[i] = 2 if random == 2
-      sequence[i] = 3 if random == 3
-      sequence[i] = 4 if random == 4
-      sequence[i] = 5 if random == 5
-      sequence[i] = 6 if random == 6
-    end; sequence
+      sequence[i] = random
+    end
+    sequence
   end
 
   def choose_player
@@ -35,5 +31,29 @@ module Utils
     print ColorizedString['  4  '].colorize(color: :black, background: :yellow).concat(' ')
     print ColorizedString['  5  '].colorize(color: :black, background: :red).concat(' ')
     puts ColorizedString['  6  '].colorize(color: :black, background: :blue)
+  end
+
+  def valid_input(input)
+    array_input = []
+    loop do
+      array_input = input.split(' ').map!(&:to_i)
+      break if array_input.size == 4 && array_input.all? { |el| el.to_i < 7 && el.to_i.positive? }
+
+      puts 'Invalid input. Please re-insert'
+      input = gets.chomp
+    end
+    array_input
+  end
+
+  def print_win(person)
+    puts "#{person ? 'Congrats, you crack the code!' : 'Oh no, the pc cracked your code!'}"
+    print 'The solution was exactly: '
+    puts print_correct_combination
+  end
+
+  def print_loss(person)
+    puts "#{person ? 'Oh-oh, you dind\'t crack the code' : 'Congrats, the pc couldn\'t crak your code!'}"
+    print 'The solution was: '
+    puts print_correct_combination
   end
 end
