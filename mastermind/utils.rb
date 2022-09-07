@@ -46,13 +46,13 @@ module Utils
   end
 
   def print_win(person)
-    puts "#{person ? 'Congrats, you crack the code!' : 'Oh no, the pc cracked your code!'}"
+    puts (person ? 'Congrats, you crack the code!' : 'Oh no, the pc cracked your code!').to_s
     print 'The solution was exactly: '
     puts print_correct_combination
   end
 
   def print_loss(person)
-    puts "#{person ? 'Oh-oh, you dind\'t crack the code' : 'Congrats, the pc couldn\'t crak your code!'}"
+    puts (person ? 'Oh-oh, you dind\'t crack the code' : 'Congrats, the pc couldn\'t crak your code!').to_s
     print 'The solution was: '
     puts print_correct_combination
   end

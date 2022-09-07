@@ -6,7 +6,6 @@ require 'utils'
 require 'game'
 
 class ComputerPlayer < Game
-
   def initialize
     puts 'Since you\'ll be the coder, please insert a 4 numbers code(separated with spaces)'
     input = valid_input(gets.chomp)
